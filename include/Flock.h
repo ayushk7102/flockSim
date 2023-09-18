@@ -9,7 +9,7 @@ class Flock
 {
     private:
     std::vector<Bird> birds;
-
+    int n_birds;
     glm::vec2 minVelocity;
     glm::vec2 maxVelocity;
 
@@ -25,13 +25,13 @@ class Flock
     
     std::vector<Bird> getBirds();
     void initRandomFlock(int n);
-    void drawFlock();
+
+    Bird getBirdById(int id);
+    glm::vec2 getFlockCenterOfMass(int id);
     
+    void drawFlock();
     void updateFlock();
     int render();
-    glm::vec2 getCenterOfMass();
-
-
     
 };
 #endif

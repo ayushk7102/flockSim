@@ -49,9 +49,40 @@ void Flock::updateFlock()
 {
     float dt = 1.0f;
     for(auto &bird: birds)
-    {
+    {   
+        int id = bird.getId();
         bird.updatePosition(dt);
+        bird.setVelocityVec(bird.getVelocity() + getFlockCenterOfMass(id));
     }
+}
+
+Bird Flock::getBirdById(int id)
+{
+    Bird b;
+    for (auto &bird: birds)
+    {
+        if (bird.bird_id == id)
+            return bird;
+    }
+    return b;
+}
+glm::vec2 Flock::getFlockCenterOfMass(int id)
+{
+    glm::vec2 com(0.0f, 0.0f);
+
+    for(auto &bird : birds)
+    {
+        if (bird.bird_id == id)
+            continue;
+        
+        com += bird.getPosition();
+    }
+
+    com = com /((float)(n_birds-1));
+    
+    glm::vec2 orig_pos = getBirdById(id).getPosition();
+    
+    return (com - orig_pos) / 100.0f;
 }
 
 int Flock::render()

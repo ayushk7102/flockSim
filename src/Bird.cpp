@@ -1,6 +1,7 @@
 #include "../include/Bird.h"
 #define N 800
 
+int Bird::id_count = 0;
 Bird::Bird(glm::vec2 position, glm::vec2 velocity) : position(position), velocity(velocity) {}
 
 
@@ -14,6 +15,10 @@ glm::vec2 Bird::getPosition() const
     return position;
 }
 
+int Bird::getId() const
+{
+    return bird_id;
+}
 glm::vec2 Bird::getVelocity() const
 {   
     return velocity;
@@ -51,17 +56,17 @@ void Bird::drawBird()
     float y = position.y; 
     x = (x)/(N/2) - 1.0;
     y = (y)/(N/2) - 1.0;
-    float size = 0.05f;
-    float s = size;
+    //float size = 0.05f;
+    float s = bird_size;
     glBegin(GL_POLYGON);
     
     //finding the angle theta from the velocity vector
     float theta = atan2(velocity.y, velocity.x);
     
-    float beta = M_PI/2 - atan2(2, 1);
+    float beta = M_PI/2 - atan2(3, 1);
 
     float x1, y1, x2, y2, s_hyp;
-    s_hyp = s * sqrt(5)/2; 
+    s_hyp = s * sqrt(10)/3; 
     
     float gamma = theta - beta;
     float gamma_dash = theta + beta;
