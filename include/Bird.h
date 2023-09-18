@@ -4,6 +4,8 @@
 #include <vector>
 #include <glm/glm.hpp>
 #include <glm/gtc/random.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/constants.hpp>
 #include <iostream>
 #include <GLFW/glfw3.h>
 #include <cstdlib>
@@ -26,6 +28,9 @@ class Bird
 
     glm::vec2 getPosition();
     glm::vec2 getVelocity();
+    
+    void setPositionVec(glm::vec2 position);
+    void setVelocityVec(glm::vec2 velocity);
 
     void setPosition(float x, float y);
     void setVelocity(float x, float y);
