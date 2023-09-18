@@ -68,6 +68,13 @@ void drawRandomDots() {
 }
 
 int main()
+{
+	Flock f;
+	f.initRandomFlock(20);
+	f.render();
+
+}
+int main2()
 {  
     srand(time(0));
     glm::vec2 pos;
@@ -88,6 +95,7 @@ int main()
 
     glfwMakeContextCurrent(window);
 
+
     while (!glfwWindowShouldClose(window)) {
         //drawRandomDots();
         
@@ -97,19 +105,22 @@ int main()
         glColor3f(1.0f, 0.0f, 0.0f);
         
         float dt = 1.0f;
-        glm::vec2 vel(2.0f,-0.8f);
+        
+        glm::vec2 vel(0.1f,-0.3f);
+
         b.setVelocityVec(vel);
             drawBird(b);
             b.updatePosition(dt);
             
         glfwSwapBuffers(window);
         glfwPollEvents();
+       
     }
 
     glfwTerminate();
- 
+ return 0;
 }
-int main2() {
+int main22() {
     if (!glfwInit()) return -1;
 
     GLFWwindow* window = glfwCreateWindow(800, 600, "Random Dots", NULL, NULL);
