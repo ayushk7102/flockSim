@@ -9,6 +9,7 @@
 #include <cstdlib>
 #include <cmath>
 #include "Flock.h"
+#include <ctime>
 class Flock;
 class Bird
 {
