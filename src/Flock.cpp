@@ -47,7 +47,7 @@ void Flock::drawFlock()
 }
 void Flock::updateFlock()
 {
-    float dt = 1.0f;
+    float dt = 0.05f;
     for(auto &bird: birds)
     {   
         int id = bird.getId();

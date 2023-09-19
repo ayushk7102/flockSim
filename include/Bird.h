@@ -39,6 +39,8 @@ class Bird
     glm::vec2 getVelocity() const;
     int getId() const;
 
+    glm::mat2 getRotationMatrix(float theta);
+
     void setPositionVec(glm::vec2 position);
     void setVelocityVec(glm::vec2 velocity);
 
@@ -47,6 +49,7 @@ class Bird
     
     void updatePosition(float deltaTime);
     void drawBird();
+    void reflect(int surface);
     //void updatePosition(const std::vector<Bird>& flock);
     //void updatePosition(const Flock flock);
     

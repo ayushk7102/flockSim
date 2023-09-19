@@ -2,11 +2,15 @@
 #define N 800
 
 int Bird::id_count = 0;
-Bird::Bird(glm::vec2 position, glm::vec2 velocity) : position(position), velocity(velocity) {}
-
+Bird::Bird(glm::vec2 position, glm::vec2 velocity)
+{
+    this->position = (position); 
+    this->velocity = (velocity);
+    bird_id = id_count++;
+}
 
 std::ostream& operator<<(std::ostream& os, const Bird& bird) {
-    os << "Bird\nPos: (" << bird.getPosition().x << ", " << bird.getPosition().y << ")\nVel: "
+    os << "Bird "<<bird.getId()<<"\nPos: (" << bird.getPosition().x << ", " << bird.getPosition().y << ")\nVel: "
        << bird.getVelocity().x << " x  " << bird.getVelocity().y << " y\n\n";
     return os;
 }
@@ -48,7 +52,49 @@ void Bird::updatePosition(float deltaTime)
     //glm::vec2 nvelocity = glm::normalize(velocity);
     //std::cout<<"pos ("<<position.x<<", " <<position.y<<")\n";
     position += velocity * deltaTime;
+    
+    if (position.y >= N || position.y <= 0)
+        reflect(0);
+    else if(position.x >= N || position.x <=0)
+        reflect(1);
 }
+
+glm::mat2 Bird::getRotationMatrix(float theta)
+{
+    return glm::mat2(cos(theta), -sin(theta), sin(theta), cos(theta));
+
+}
+
+void Bird::reflect(int surface)
+{
+    float A, B;
+    switch(surface)
+    {
+        case 0: //top; y = N OR y = 0
+        A = 0.0f; B = 1.0f;
+        break;
+
+        case 1: //left; x = 0 OR x = N
+        A = 1.0f; B = 0.0f;
+        break;
+
+    }
+    glm::vec2 normal(A, B);
+    
+    float mag_vel = glm::length(velocity);
+    float mag_normal = glm::length(normal);
+
+    float dot_prod = glm::dot(velocity, normal);
+
+    float angle_theta = std::acos(dot_prod / (mag_vel * mag_normal)); //angle of incidence
+    
+    glm::mat2 rotation_matrix = getRotationMatrix(2 * angle_theta);
+
+    glm::vec2 reflected_vel = rotation_matrix * velocity;
+
+    velocity = reflected_vel;
+}
+
 void Bird::drawBird()
 {
 //finding the base position of the bird
