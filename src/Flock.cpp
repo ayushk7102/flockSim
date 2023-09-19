@@ -47,12 +47,20 @@ void Flock::drawFlock()
 }
 void Flock::updateFlock()
 {
-    float dt = 0.05f;
+    float dt = 0.05f; // time delta
+    
+    float w_c = 1.0f;
+    float w_s = 1.0f;
+    glm::vec2 cohesion, separation;
     for(auto &bird: birds)
     {   
         int id = bird.getId();
         bird.updatePosition(dt);
-        bird.setVelocityVec(bird.getVelocity() + getFlockCenterOfMass(id));
+        
+        cohesion = getFlockCenterOfMass(id);
+        separation = diffuse(bird);
+        bird.setVelocityVec(bird.getVelocity() + w_c * cohesion + w_c *
+        separation);
     }
 }
 
@@ -65,6 +73,30 @@ Bird Flock::getBirdById(int id)
             return bird;
     }
     return b;
+}
+
+float Flock::getSeparation(Bird b1, Bird b2)
+{
+    return glm::distance(b1.getPosition(), b2.getPosition());
+}
+
+glm::vec2 Flock::diffuse(Bird b1) // diffuse Bird b among the others in flock
+{
+    float epsilon = 25.0f; // diffusion distance
+    glm::vec2 perturbation(0.0f, 0.0f);
+
+    for(auto &b2: birds)
+    {
+        if (b2.getId() == b1.bird_id)
+            continue;
+        
+        float dist = b1.euclDist(b2);
+        if (dist < epsilon)
+            perturbation -= (b1.getPosition() - b2.getPosition());
+            
+    }
+
+    return perturbation;
 }
 glm::vec2 Flock::getFlockCenterOfMass(int id)
 {

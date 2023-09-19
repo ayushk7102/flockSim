@@ -25,10 +25,12 @@ class Flock
     
     std::vector<Bird> getBirds();
     void initRandomFlock(int n);
-
-    Bird getBirdById(int id);
-    glm::vec2 getFlockCenterOfMass(int id);
     
+    Bird getBirdById(int id);
+    
+    glm::vec2 getFlockCenterOfMass(int id);
+    float getSeparation(Bird b1, Bird b2);
+    glm::vec2 diffuse(Bird b);
     void drawFlock();
     void updateFlock();
     int render();

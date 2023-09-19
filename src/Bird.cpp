@@ -59,6 +59,12 @@ void Bird::updatePosition(float deltaTime)
         reflect(1);
 }
 
+
+float Bird::euclDist(Bird b)
+{
+    return glm::distance(position, b.getPosition());
+}
+
 glm::mat2 Bird::getRotationMatrix(float theta)
 {
     return glm::mat2(cos(theta), -sin(theta), sin(theta), cos(theta));

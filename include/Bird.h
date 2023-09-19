@@ -46,10 +46,11 @@ class Bird
 
     void setPosition(float x, float y);
     void setVelocity(float x, float y);
-    
+   
     void updatePosition(float deltaTime);
     void drawBird();
     void reflect(int surface);
+    float euclDist(Bird b);
     //void updatePosition(const std::vector<Bird>& flock);
     //void updatePosition(const Flock flock);
     
