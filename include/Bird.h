@@ -12,7 +12,7 @@
 #include <cmath>
 #include "Flock.h"
 #include <ctime>
-
+#include <glm/gtx/string_cast.hpp>
 #define bird_size 0.05f
 
 class Flock;
@@ -21,15 +21,22 @@ class Bird
     private:
     glm::vec2 position;
     glm::vec2 velocity;
-    
+        
     public:
     static int id_count;
     int bird_id;
+    float vis_radius = 150.0f;
+    float prot_radius = 70.0f;
+    
+    bool is_leader = false;
+    
     Bird()
     {
         position = glm::vec2(0.0f, 0.0f);
         velocity = glm::vec2(0.0f, 0.0f);
         bird_id = id_count++;
+        vis_radius = 50.0f;
+        prot_radius = 30.0f;
     }
     Bird(float x, float y);
 
@@ -51,6 +58,7 @@ class Bird
     void drawBird();
     void reflect(int surface);
     float euclDist(Bird b);
+    
     //void updatePosition(const std::vector<Bird>& flock);
     //void updatePosition(const Flock flock);
     
@@ -58,5 +66,6 @@ class Bird
 
 };
 
+bool inBounds(float x, float y);
 std::ostream& operator<<(std::ostream& os, const Bird& bird);
 #endif
