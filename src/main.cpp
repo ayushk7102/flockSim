@@ -70,7 +70,8 @@ void drawRandomDots() {
 int main()
 {
 	Flock f;
-	f.initRandomFlock(20);
+f.initRandomFlock(200);
+//	f.initRandomFlock(1);
 	f.render();
 
 }

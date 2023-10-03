@@ -1,6 +1,8 @@
 #include "../include/Bird.h"
 #define N 800
 
+int refTimer = 10;
+
 int Bird::id_count = 0;
 Bird::Bird(glm::vec2 position, glm::vec2 velocity)
 {
@@ -57,6 +59,7 @@ void Bird::updatePosition(float deltaTime)
         reflect(0);
     else if(position.x >= N || position.x <=0)
         reflect(1);
+    
 }
 
 
@@ -78,27 +81,37 @@ void Bird::reflect(int surface)
     {
         case 0: //top; y = N OR y = 0
         A = 0.0f; B = 1.0f;
+        
+        std::cout<<"-----------------------HIT TOP OR BOTTOM\n----------\n\n";
         break;
 
         case 1: //left; x = 0 OR x = N
         A = 1.0f; B = 0.0f;
-        break;
+       
+        std::cout<<"-----------------------HIT left or right\n----------\n\n";
+       break;
 
     }
     glm::vec2 normal(A, B);
-    
     float mag_vel = glm::length(velocity);
     float mag_normal = glm::length(normal);
-
+    
     float dot_prod = glm::dot(velocity, normal);
 
-    float angle_theta = std::acos(dot_prod / (mag_vel * mag_normal)); //angle of incidence
+    //std::cout<<"vel: "<<glm::to_string(velocity)<<" with mag" <<mag_vel<<"\n";
+
     
-    glm::mat2 rotation_matrix = getRotationMatrix(2 * angle_theta);
+    //float angle_theta = std::acos(dot_prod / (mag_vel * mag_normal)); //angle of incidence
+    //glm::mat2 rotation_matrix = getRotationMatrix(2 * angle_theta);
 
-    glm::vec2 reflected_vel = rotation_matrix * velocity;
 
+    //std::cout << glm::to_string(rotation_matrix) << std::endl;
+    glm::vec2 reflected_vel = glm::reflect(velocity, normal);
     velocity = reflected_vel;
+    
+    //std::cout<<"reflected vel: " << glm::to_string(reflected_vel) << std::endl;
+    
+    //while(1);
 }
 
 void Bird::drawBird()

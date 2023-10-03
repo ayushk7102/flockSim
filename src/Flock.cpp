@@ -19,6 +19,7 @@ std::vector<Bird> Flock::getBirds()
 
 void Flock::initRandomFlock(int n)
 {
+    n_birds = n;
     srand(time(0));
     minVelocity = glm::vec2(-2.0f, -2.0f);
     maxVelocity = glm::vec2(2.0f, 2.0f);
@@ -47,11 +48,13 @@ void Flock::drawFlock()
 }
 void Flock::updateFlock()
 {
-    float dt = 0.05f; // time delta
+    float dt =0.5f; // time delta
     
     float w_c = 1.0f;
-    float w_s = 1.0f;
-    glm::vec2 cohesion, separation;
+    float w_s = 1.0f-1;
+    float w_a = 1.0f-1;
+
+    glm::vec2 cohesion, separation, alignment;
     for(auto &bird: birds)
     {   
         int id = bird.getId();
@@ -59,8 +62,14 @@ void Flock::updateFlock()
         
         cohesion = getFlockCenterOfMass(id);
         separation = diffuse(bird);
+        alignment = getFlockHeading(id);
+        
+        std::cout<<"----------------\nCohesion: "<<cohesion.x<<", "<<cohesion.y<<"\n";
+        std::cout<<"Separation: "<<separation.x<<", "<<separation.y<<"\n";
+        std::cout<<"Alignment: "<<alignment.x<<","<<alignment.y<<"\n--------------------\n";
+        
         bird.setVelocityVec(bird.getVelocity() + w_c * cohesion + w_c *
-        separation);
+        separation + w_a * alignment);
     }
 }
 
@@ -82,7 +91,7 @@ float Flock::getSeparation(Bird b1, Bird b2)
 
 glm::vec2 Flock::diffuse(Bird b1) // diffuse Bird b among the others in flock
 {
-    float epsilon = 25.0f; // diffusion distance
+    float epsilon = 50.0f; // diffusion distance
     glm::vec2 perturbation(0.0f, 0.0f);
 
     for(auto &b2: birds)
@@ -104,19 +113,38 @@ glm::vec2 Flock::getFlockCenterOfMass(int id)
 
     for(auto &bird : birds)
     {
-        if (bird.bird_id == id)
-            continue;
+       // if (bird.bird_id == id)
+         //   continue;
+       
+        Bird b = getBirdById(id);
+        if (b.euclDist(bird) < 75.0f)
         
-        com += bird.getPosition();
+            com += bird.getPosition();
     }
-
-    com = com /((float)(n_birds-1));
-    
+    com = com /((float)(n_birds));
     glm::vec2 orig_pos = getBirdById(id).getPosition();
     
     return (com - orig_pos) / 100.0f;
 }
 
+glm::vec2 Flock::getFlockHeading(int id) // get the average velocity of flock
+{
+    glm::vec2 avg_vel(0.0f, 0.0f);
+    Bird b = getBirdById(id);
+    for(auto &bird : birds)
+    {
+         
+         //   continue;
+        if (bird.euclDist(b) < 20)
+        avg_vel += bird.getVelocity();
+    }
+
+    avg_vel /= ((float)(n_birds));
+    
+    glm::vec2 orig_vel = getBirdById(id).getVelocity();
+    
+    return (avg_vel - orig_vel) / 8.0f;
+}   
 int Flock::render()
 {
     if (!glfwInit()) return -1;
