@@ -245,6 +245,9 @@ flockSim_SOURCE_DIR:STATIC=/home/ayush/Desktop/Stuff/flockSim
 //The directory containing a CMake configuration file for glfw3.
 glfw3_DIR:PATH=/usr/local/lib/cmake/glfw3
 
+//The directory containing a CMake configuration file for imgui.
+imgui_DIR:PATH=imgui_DIR-NOTFOUND
+
 
 ########################
 # INTERNAL cache entries

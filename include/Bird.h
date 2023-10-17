@@ -25,8 +25,8 @@ class Bird
     public:
     static int id_count;
     int bird_id;
-    float vis_radius = 150.0f;
-    float prot_radius = 70.0f;
+    float vis_radius = 400.0f;
+    float prot_radius = 40.0f;
     
     bool is_leader = false;
     
@@ -50,6 +50,8 @@ class Bird
 
     void setPositionVec(glm::vec2 position);
     void setVelocityVec(glm::vec2 velocity);
+    
+    void limitVelocity();
 
     void setPosition(float x, float y);
     void setVelocity(float x, float y);

@@ -4,12 +4,15 @@ project(flockSim)
 # Set C++ standard (e.g., C++11)
 set(CMAKE_CXX_STANDARD 11)
 
+
 # Include directories for header files
 include_directories(include)
 
 # Find OpenGL package
 find_package(OpenGL REQUIRED)
 find_package(glfw3 REQUIRED)
+
+
 # Source files for your project
 set(SOURCES
     src/main.cpp
@@ -21,8 +24,9 @@ set(SOURCES
 # Create an executable from your source files
 add_executable(flockSim ${SOURCES})
 
+
 # Link OpenGL libraries
-target_link_libraries(flockSim ${OPENGL_LIBRARIES} glfw)
+target_link_libraries(flockSim ${OPENGL_LIBRARIES} glfw) 
 
 
 # Set the output directory for the executable

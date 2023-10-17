@@ -366,7 +366,49 @@ CMakeFiles/flockSim.dir/src/Bird.cpp.o: ../src/Bird.cpp \
   /usr/include/GL/glext.h \
   /usr/include/KHR/khrplatform.h \
   ../include/Flock.h \
-  ../include/Bird.h
+  ../include/Bird.h \
+  /usr/include/glm/gtx/string_cast.hpp \
+  /usr/include/glm/gtc/type_precision.hpp \
+  /usr/include/glm/gtc/quaternion.hpp \
+  /usr/include/glm/ext/vector_relational.hpp \
+  /usr/include/glm/ext/vector_relational.inl \
+  /usr/include/glm/detail/type_float.hpp \
+  /usr/include/glm/ext/quaternion_common.hpp \
+  /usr/include/glm/ext/quaternion_geometric.hpp \
+  /usr/include/glm/ext/quaternion_geometric.inl \
+  /usr/include/glm/ext/quaternion_common.inl \
+  /usr/include/glm/ext/quaternion_float.hpp \
+  /usr/include/glm/detail/type_quat.hpp \
+  /usr/include/glm/ext/quaternion_relational.hpp \
+  /usr/include/glm/ext/quaternion_relational.inl \
+  /usr/include/glm/detail/type_quat.inl \
+  /usr/include/glm/ext/quaternion_float_precision.hpp \
+  /usr/include/glm/ext/quaternion_double.hpp \
+  /usr/include/glm/ext/quaternion_double_precision.hpp \
+  /usr/include/glm/ext/quaternion_trigonometric.hpp \
+  /usr/include/glm/ext/quaternion_trigonometric.inl \
+  /usr/include/glm/ext/quaternion_transform.hpp \
+  /usr/include/glm/ext/quaternion_transform.inl \
+  /usr/include/glm/gtc/quaternion.inl \
+  /usr/include/glm/gtc/epsilon.hpp \
+  /usr/include/glm/detail/setup.hpp \
+  /usr/include/glm/gtc/epsilon.inl \
+  /usr/include/glm/gtc/vec1.hpp \
+  /usr/include/glm/ext/vector_bool1.hpp \
+  /usr/include/glm/ext/vector_bool1_precision.hpp \
+  /usr/include/glm/ext/vector_float1.hpp \
+  /usr/include/glm/ext/vector_float1_precision.hpp \
+  /usr/include/glm/ext/vector_double1.hpp \
+  /usr/include/glm/ext/vector_double1_precision.hpp \
+  /usr/include/glm/ext/vector_int1.hpp \
+  /usr/include/glm/ext/vector_int1_sized.hpp \
+  /usr/include/glm/ext/vector_uint1.hpp \
+  /usr/include/glm/ext/vector_uint1_sized.hpp \
+  /usr/include/glm/gtc/type_precision.inl \
+  /usr/include/glm/gtx/dual_quaternion.hpp \
+  /usr/include/glm/gtx/dual_quaternion.inl \
+  /usr/include/glm/gtx/string_cast.inl \
+  /usr/include/c++/11/cstdarg
 
 CMakeFiles/flockSim.dir/src/Flock.cpp.o: ../src/Flock.cpp \
   /usr/include/stdc-predef.h \
@@ -733,7 +775,59 @@ CMakeFiles/flockSim.dir/src/Flock.cpp.o: ../src/Flock.cpp \
   /usr/include/GL/gl.h \
   /usr/include/GL/glext.h \
   /usr/include/KHR/khrplatform.h \
-  ../include/Flock.h
+  ../include/Flock.h \
+  /usr/include/glm/gtx/string_cast.hpp \
+  /usr/include/glm/gtc/type_precision.hpp \
+  /usr/include/glm/gtc/quaternion.hpp \
+  /usr/include/glm/ext/vector_relational.hpp \
+  /usr/include/glm/ext/vector_relational.inl \
+  /usr/include/glm/detail/type_float.hpp \
+  /usr/include/glm/ext/quaternion_common.hpp \
+  /usr/include/glm/ext/quaternion_geometric.hpp \
+  /usr/include/glm/ext/quaternion_geometric.inl \
+  /usr/include/glm/ext/quaternion_common.inl \
+  /usr/include/glm/ext/quaternion_float.hpp \
+  /usr/include/glm/detail/type_quat.hpp \
+  /usr/include/glm/ext/quaternion_relational.hpp \
+  /usr/include/glm/ext/quaternion_relational.inl \
+  /usr/include/glm/detail/type_quat.inl \
+  /usr/include/glm/ext/quaternion_float_precision.hpp \
+  /usr/include/glm/ext/quaternion_double.hpp \
+  /usr/include/glm/ext/quaternion_double_precision.hpp \
+  /usr/include/glm/ext/quaternion_trigonometric.hpp \
+  /usr/include/glm/ext/quaternion_trigonometric.inl \
+  /usr/include/glm/ext/quaternion_transform.hpp \
+  /usr/include/glm/ext/quaternion_transform.inl \
+  /usr/include/glm/gtc/quaternion.inl \
+  /usr/include/glm/gtc/epsilon.hpp \
+  /usr/include/glm/detail/setup.hpp \
+  /usr/include/glm/gtc/epsilon.inl \
+  /usr/include/glm/gtc/vec1.hpp \
+  /usr/include/glm/ext/vector_bool1.hpp \
+  /usr/include/glm/ext/vector_bool1_precision.hpp \
+  /usr/include/glm/ext/vector_float1.hpp \
+  /usr/include/glm/ext/vector_float1_precision.hpp \
+  /usr/include/glm/ext/vector_double1.hpp \
+  /usr/include/glm/ext/vector_double1_precision.hpp \
+  /usr/include/glm/ext/vector_int1.hpp \
+  /usr/include/glm/ext/vector_int1_sized.hpp \
+  /usr/include/glm/ext/vector_uint1.hpp \
+  /usr/include/glm/ext/vector_uint1_sized.hpp \
+  /usr/include/glm/gtc/type_precision.inl \
+  /usr/include/glm/gtx/dual_quaternion.hpp \
+  /usr/include/glm/gtx/dual_quaternion.inl \
+  /usr/include/glm/gtx/string_cast.inl \
+  /usr/include/c++/11/cstdarg \
+  ../include/stb_image.h \
+  /usr/include/c++/11/stdlib.h \
+  /usr/include/string.h \
+  /usr/include/strings.h \
+  /usr/include/c++/11/math.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/emmintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/xmmintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/mmintrin.h \
+  /usr/lib/gcc/x86_64-linux-gnu/11/include/mm_malloc.h \
+  ../include/stb_image_write.h
 
 CMakeFiles/flockSim.dir/src/main.cpp.o: ../src/main.cpp \
   /usr/include/stdc-predef.h \
@@ -1101,12 +1195,104 @@ CMakeFiles/flockSim.dir/src/main.cpp.o: ../src/main.cpp \
   /usr/include/KHR/khrplatform.h \
   ../include/Flock.h \
   ../include/Bird.h \
-  ../include/Flock.h
+  /usr/include/glm/gtx/string_cast.hpp \
+  /usr/include/glm/gtc/type_precision.hpp \
+  /usr/include/glm/gtc/quaternion.hpp \
+  /usr/include/glm/ext/vector_relational.hpp \
+  /usr/include/glm/ext/vector_relational.inl \
+  /usr/include/glm/detail/type_float.hpp \
+  /usr/include/glm/ext/quaternion_common.hpp \
+  /usr/include/glm/ext/quaternion_geometric.hpp \
+  /usr/include/glm/ext/quaternion_geometric.inl \
+  /usr/include/glm/ext/quaternion_common.inl \
+  /usr/include/glm/ext/quaternion_float.hpp \
+  /usr/include/glm/detail/type_quat.hpp \
+  /usr/include/glm/ext/quaternion_relational.hpp \
+  /usr/include/glm/ext/quaternion_relational.inl \
+  /usr/include/glm/detail/type_quat.inl \
+  /usr/include/glm/ext/quaternion_float_precision.hpp \
+  /usr/include/glm/ext/quaternion_double.hpp \
+  /usr/include/glm/ext/quaternion_double_precision.hpp \
+  /usr/include/glm/ext/quaternion_trigonometric.hpp \
+  /usr/include/glm/ext/quaternion_trigonometric.inl \
+  /usr/include/glm/ext/quaternion_transform.hpp \
+  /usr/include/glm/ext/quaternion_transform.inl \
+  /usr/include/glm/gtc/quaternion.inl \
+  /usr/include/glm/gtc/epsilon.hpp \
+  /usr/include/glm/detail/setup.hpp \
+  /usr/include/glm/gtc/epsilon.inl \
+  /usr/include/glm/gtc/vec1.hpp \
+  /usr/include/glm/ext/vector_bool1.hpp \
+  /usr/include/glm/ext/vector_bool1_precision.hpp \
+  /usr/include/glm/ext/vector_float1.hpp \
+  /usr/include/glm/ext/vector_float1_precision.hpp \
+  /usr/include/glm/ext/vector_double1.hpp \
+  /usr/include/glm/ext/vector_double1_precision.hpp \
+  /usr/include/glm/ext/vector_int1.hpp \
+  /usr/include/glm/ext/vector_int1_sized.hpp \
+  /usr/include/glm/ext/vector_uint1.hpp \
+  /usr/include/glm/ext/vector_uint1_sized.hpp \
+  /usr/include/glm/gtc/type_precision.inl \
+  /usr/include/glm/gtx/dual_quaternion.hpp \
+  /usr/include/glm/gtx/dual_quaternion.inl \
+  /usr/include/glm/gtx/string_cast.inl \
+  /usr/include/c++/11/cstdarg \
+  ../include/Flock.h \
+  ../include/imgui.h \
+  ../include/imconfig.h \
+  /usr/include/string.h \
+  /usr/include/strings.h \
+  ../include/imgui_impl_glfw.h \
+  ../include/imgui_impl_opengl3.h
 
+
+../include/imconfig.h:
+
+../include/imgui.h:
+
+../include/stb_image_write.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/mmintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/xmmintrin.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/emmintrin.h:
+
+../src/Flock.cpp:
+
+/usr/include/glm/gtx/dual_quaternion.inl:
+
+/usr/include/glm/ext/vector_uint1.hpp:
 
 ../src/main.cpp:
 
-../src/Flock.cpp:
+/usr/include/glm/ext/vector_int1_sized.hpp:
+
+/usr/include/glm/ext/vector_int1.hpp:
+
+/usr/include/glm/ext/vector_float1.hpp:
+
+/usr/include/glm/ext/vector_bool1_precision.hpp:
+
+/usr/include/glm/ext/vector_bool1.hpp:
+
+/usr/include/glm/gtc/epsilon.inl:
+
+/usr/include/glm/ext/quaternion_transform.inl:
+
+/usr/include/glm/ext/quaternion_trigonometric.inl:
+
+/usr/include/glm/ext/quaternion_double.hpp:
+
+/usr/include/glm/ext/quaternion_relational.inl:
+
+/usr/include/glm/ext/quaternion_geometric.inl:
+
+/usr/include/glm/ext/vector_relational.inl:
+
+/usr/include/glm/gtx/string_cast.hpp:
+
+/usr/include/glm/ext/quaternion_trigonometric.hpp:
 
 /usr/include/GL/glext.h:
 
@@ -1128,9 +1314,15 @@ CMakeFiles/flockSim.dir/src/main.cpp.o: ../src/main.cpp \
 
 /usr/include/c++/11/bits/basic_ios.h:
 
+/usr/include/string.h:
+
+/usr/include/glm/gtc/type_precision.inl:
+
 /usr/include/c++/11/bits/streambuf.tcc:
 
 /usr/include/c++/11/streambuf:
+
+/usr/lib/gcc/x86_64-linux-gnu/11/include/mm_malloc.h:
 
 /usr/include/c++/11/system_error:
 
@@ -1150,15 +1342,21 @@ CMakeFiles/flockSim.dir/src/main.cpp.o: ../src/main.cpp \
 
 /usr/include/errno.h:
 
+/usr/include/glm/ext/vector_float1_precision.hpp:
+
 /usr/include/c++/11/cerrno:
 
 /usr/include/x86_64-linux-gnu/bits/types/cookie_io_functions_t.h:
+
+../include/imgui_impl_opengl3.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__fpos64_t.h:
 
 /usr/include/stdio.h:
 
 /usr/include/c++/11/ext/string_conversions.h:
+
+/usr/include/glm/gtc/vec1.hpp:
 
 /usr/include/c++/11/bits/cxxabi_forced.h:
 
@@ -1173,6 +1371,8 @@ CMakeFiles/flockSim.dir/src/main.cpp.o: ../src/main.cpp \
 /usr/include/asm-generic/errno.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h:
+
+/usr/include/glm/gtc/quaternion.inl:
 
 /usr/include/pthread.h:
 
@@ -1222,6 +1422,8 @@ CMakeFiles/flockSim.dir/src/main.cpp.o: ../src/main.cpp \
 
 /usr/include/c++/11/ostream:
 
+../include/stb_image.h:
+
 /usr/include/glm/ext/matrix_transform.hpp:
 
 /usr/include/glm/ext/matrix_projection.inl:
@@ -1233,6 +1435,8 @@ CMakeFiles/flockSim.dir/src/main.cpp.o: ../src/main.cpp \
 /usr/include/glm/ext/matrix_projection.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
+
+/usr/include/glm/ext/quaternion_double_precision.hpp:
 
 /usr/include/c++/11/bits/locale_facets.tcc:
 
@@ -1280,6 +1484,8 @@ CMakeFiles/flockSim.dir/src/main.cpp.o: ../src/main.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
 
+/usr/include/glm/detail/type_quat.hpp:
+
 /usr/include/c++/11/ext/new_allocator.h:
 
 /usr/include/limits.h:
@@ -1297,6 +1503,8 @@ CMakeFiles/flockSim.dir/src/main.cpp.o: ../src/main.cpp \
 /usr/include/c++/11/string:
 
 /usr/include/x86_64-linux-gnu/bits/uio_lim.h:
+
+/usr/include/glm/ext/quaternion_geometric.hpp:
 
 /usr/include/glm/ext/matrix_float3x4.hpp:
 
@@ -1357,6 +1565,8 @@ CMakeFiles/flockSim.dir/src/main.cpp.o: ../src/main.cpp \
 /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
 
 /usr/include/glm/ext/matrix_float4x4.hpp:
+
+/usr/include/glm/ext/vector_relational.hpp:
 
 /usr/include/glm/ext/vector_float2_precision.hpp:
 
@@ -1422,6 +1632,8 @@ CMakeFiles/flockSim.dir/src/main.cpp.o: ../src/main.cpp \
 
 /usr/include/glm/ext/matrix_double3x4_precision.hpp:
 
+/usr/include/c++/11/cstdarg:
+
 /usr/include/x86_64-linux-gnu/sys/single_threaded.h:
 
 /usr/include/c++/11/type_traits:
@@ -1435,6 +1647,8 @@ CMakeFiles/flockSim.dir/src/main.cpp.o: ../src/main.cpp \
 /usr/include/c++/11/cstdint:
 
 /usr/include/x86_64-linux-gnu/bits/waitstatus.h:
+
+/usr/include/glm/gtc/quaternion.hpp:
 
 /usr/include/c++/11/bits/functexcept.h:
 
@@ -1458,6 +1672,8 @@ CMakeFiles/flockSim.dir/src/main.cpp.o: ../src/main.cpp \
 
 /usr/include/glm/ext/vector_float4.hpp:
 
+/usr/include/glm/ext/vector_double1.hpp:
+
 /usr/include/c++/11/bits/std_abs.h:
 
 /usr/include/c++/11/bits/stl_iterator_base_types.h:
@@ -1474,11 +1690,15 @@ CMakeFiles/flockSim.dir/src/main.cpp.o: ../src/main.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h:
 
+/usr/include/glm/detail/type_quat.inl:
+
 /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h:
 
 /usr/include/c++/11/debug/debug.h:
 
 /usr/include/features-time64.h:
+
+/usr/include/glm/ext/quaternion_transform.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
 
@@ -1487,6 +1707,8 @@ CMakeFiles/flockSim.dir/src/main.cpp.o: ../src/main.cpp \
 /usr/include/glm/ext/vector_float3_precision.hpp:
 
 /usr/include/c++/11/bits/functional_hash.h:
+
+/usr/include/glm/gtx/string_cast.inl:
 
 /usr/include/x86_64-linux-gnu/bits/types/error_t.h:
 
@@ -1503,6 +1725,8 @@ CMakeFiles/flockSim.dir/src/main.cpp.o: ../src/main.cpp \
 /usr/include/c++/11/bits/memoryfwd.h:
 
 /usr/include/x86_64-linux-gnu/bits/fp-logb.h:
+
+/usr/include/strings.h:
 
 /usr/include/glm/detail/compute_common.hpp:
 
@@ -1556,6 +1780,8 @@ CMakeFiles/flockSim.dir/src/main.cpp.o: ../src/main.cpp \
 
 /usr/include/glm/detail/_fixes.hpp:
 
+/usr/include/glm/ext/quaternion_float.hpp:
+
 /usr/include/glm/mat4x4.hpp:
 
 /usr/include/c++/11/bits/predefined_ops.h:
@@ -1598,6 +1824,8 @@ CMakeFiles/flockSim.dir/src/main.cpp.o: ../src/main.cpp \
 
 /usr/include/glm/vec3.hpp:
 
+/usr/include/c++/11/stdlib.h:
+
 /usr/include/glm/ext/vector_bool2_precision.hpp:
 
 /usr/include/x86_64-linux-gnu/bits/byteswap.h:
@@ -1628,7 +1856,11 @@ CMakeFiles/flockSim.dir/src/main.cpp.o: ../src/main.cpp \
 
 /usr/include/glm/packing.hpp:
 
+/usr/include/c++/11/math.h:
+
 /usr/include/glm/ext/vector_uint2.hpp:
+
+/usr/include/glm/ext/quaternion_relational.hpp:
 
 /usr/include/glm/ext/matrix_double2x4_precision.hpp:
 
@@ -1646,9 +1878,15 @@ CMakeFiles/flockSim.dir/src/main.cpp.o: ../src/main.cpp \
 
 /usr/include/glm/ext/matrix_float2x4.hpp:
 
+/usr/include/glm/ext/quaternion_float_precision.hpp:
+
 /usr/include/glm/ext/vector_double3.hpp:
 
+/usr/include/glm/ext/quaternion_common.hpp:
+
 /usr/include/glm/ext/vector_double3_precision.hpp:
+
+/usr/include/glm/ext/vector_double1_precision.hpp:
 
 /usr/include/glm/ext/vector_int3.hpp:
 
@@ -1675,6 +1913,8 @@ CMakeFiles/flockSim.dir/src/main.cpp.o: ../src/main.cpp \
 /usr/include/glm/ext/vector_double4_precision.hpp:
 
 /usr/include/glm/ext/vector_int4.hpp:
+
+/usr/include/glm/gtc/type_precision.hpp:
 
 /usr/include/glm/ext/matrix_float2x4_precision.hpp:
 
@@ -1754,6 +1994,8 @@ CMakeFiles/flockSim.dir/src/main.cpp.o: ../src/main.cpp \
 
 /usr/include/glm/ext/matrix_double3x4.hpp:
 
+../include/imgui_impl_glfw.h:
+
 /usr/include/glm/detail/type_mat3x4.hpp:
 
 /usr/include/glm/ext/matrix_float4x2.hpp:
@@ -1780,6 +2022,8 @@ CMakeFiles/flockSim.dir/src/main.cpp.o: ../src/main.cpp \
 
 /usr/include/glm/ext/matrix_double4x3_precision.hpp:
 
+/usr/include/glm/ext/quaternion_common.inl:
+
 /usr/include/glm/ext/matrix_double4x4_precision.hpp:
 
 /usr/include/glm/ext/matrix_float4x4_precision.hpp:
@@ -1795,6 +2039,8 @@ CMakeFiles/flockSim.dir/src/main.cpp.o: ../src/main.cpp \
 /usr/include/sched.h:
 
 /usr/include/glm/detail/func_exponential.inl:
+
+/usr/include/glm/detail/type_float.hpp:
 
 /usr/include/c++/11/bits/streambuf_iterator.h:
 
@@ -1812,6 +2058,8 @@ CMakeFiles/flockSim.dir/src/main.cpp.o: ../src/main.cpp \
 
 /usr/include/glm/common.hpp:
 
+/usr/include/glm/gtc/epsilon.hpp:
+
 /usr/include/stdc-predef.h:
 
 /usr/include/c++/11/bits/alloc_traits.h:
@@ -1819,6 +2067,8 @@ CMakeFiles/flockSim.dir/src/main.cpp.o: ../src/main.cpp \
 /usr/include/glm/ext/matrix_float2x2_precision.hpp:
 
 /usr/include/glm/trigonometric.hpp:
+
+/usr/include/glm/gtx/dual_quaternion.hpp:
 
 ../include/Flock.h:
 
@@ -1829,6 +2079,8 @@ CMakeFiles/flockSim.dir/src/main.cpp.o: ../src/main.cpp \
 /usr/include/glm/detail/type_half.inl:
 
 /usr/include/glm/integer.hpp:
+
+/usr/include/glm/ext/vector_uint1_sized.hpp:
 
 /usr/include/glm/ext/vector_float2.hpp:
 

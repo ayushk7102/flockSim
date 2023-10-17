@@ -49,6 +49,17 @@ void Bird::setVelocity(float x, float y)
     velocity.x = x;
     velocity.y = y;
 }
+
+void Bird::limitVelocity()
+{
+    float speedLim = 40;
+    float speed = glm::length(velocity);
+
+    if (speed > speedLim)
+    {
+        velocity -= velocity/speed * speedLim;
+    }
+}
 void Bird::updatePosition(float deltaTime)
 {   
     //glm::vec2 nvelocity = glm::normalize(velocity);
@@ -62,6 +73,13 @@ void Bird::updatePosition(float deltaTime)
     
 }
 
+bool inBounds(float x, float y)
+{
+    if (y >= N || y <= 0 ||  x >= N || x <=0)
+        return false;
+    return true;
+
+}
 
 float Bird::euclDist(Bird b)
 {
@@ -82,13 +100,13 @@ void Bird::reflect(int surface)
         case 0: //top; y = N OR y = 0
         A = 0.0f; B = 1.0f;
         
-        std::cout<<"-----------------------HIT TOP OR BOTTOM\n----------\n\n";
+        //std::cout<<"-----------------------HIT TOP OR BOTTOM\n----------\n\n";
         break;
 
         case 1: //left; x = 0 OR x = N
         A = 1.0f; B = 0.0f;
        
-        std::cout<<"-----------------------HIT left or right\n----------\n\n";
+        //std::cout<<"-----------------------HIT left or right\n----------\n\n";
        break;
 
     }
@@ -117,6 +135,11 @@ void Bird::reflect(int surface)
 void Bird::drawBird()
 {
 //finding the base position of the bird
+
+    if (this->is_leader)
+    {
+       return;
+    }
     float x = position.x;
     float y = position.y; 
     x = (x)/(N/2) - 1.0;

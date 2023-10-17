@@ -1,5 +1,8 @@
 #include "../include/Bird.h"
 #include "../include/Flock.h"
+#include "../include/imgui.h"
+#include "../include/imgui_impl_glfw.h"
+#include "../include/imgui_impl_opengl3.h"
 #define N 800
 //#include <iostream>
 //#include <GLFW/glfw3.h>
@@ -8,6 +11,12 @@
 
 void drawBird(Bird bird)
 {   //finding the base position of the bird
+    
+    if (bird.is_leader)
+        {
+            std::cout<<"Leader found\n";
+            return;
+        }
     float x = bird.getPosition().x;
     float y = bird.getPosition().y; 
     x = (x)/(N/2) - 1.0;
@@ -16,11 +25,11 @@ void drawBird(Bird bird)
     float s = size;
     glBegin(GL_POLYGON);
     
-    std::vector<glm::vec2> points, shifted_points;
-    points.push_back(glm::vec2(x, y));
-    points.push_back(glm::vec2(x+size/2, y+size));
-    points.push_back(glm::vec2(x+size, y));
-    shifted_points = points;
+    //std::vector<glm::vec2> points, shifted_points;
+    //points.push_back(glm::vec2(x, y));
+    //points.push_back(glm::vec2(x+size/2, y+size));
+    //points.push_back(glm::vec2(x+size, y));
+    //shifted_points = points;
     //finding the angle theta from the velocity vector
     float theta = atan2(bird.getVelocity().y, bird.getVelocity().x);
     
@@ -70,8 +79,9 @@ void drawRandomDots() {
 int main()
 {
 	Flock f;
-f.initRandomFlock(200);
-//	f.initRandomFlock(1);
+//f.initRandomFlock(200);
+f.initRandomFlock(80);
+//f.initRandomFlock(1);
 	f.render();
 
 }
