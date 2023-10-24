@@ -29,7 +29,8 @@ class Bird
     float prot_radius = 40.0f;
     
     bool is_leader = false;
-    
+    bool is_sick = false;
+
     Bird()
     {
         position = glm::vec2(0.0f, 0.0f);
@@ -55,10 +56,11 @@ class Bird
 
     void setPosition(float x, float y);
     void setVelocity(float x, float y);
-   
+       
     void updatePosition(float deltaTime);
     void drawBird();
     void reflect(int surface);
+    void setSick();
     float euclDist(Bird b);
     
     //void updatePosition(const std::vector<Bird>& flock);

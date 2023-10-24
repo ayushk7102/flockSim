@@ -43,6 +43,8 @@ void Flock::initRandomFlock(int n)
 
     }
 
+    birds.at(0).setSick();
+
     glm::vec2 leading_vel = glm::linearRand(minVelocity-5.0f, maxVelocity+5.0f);
     int numLeaders = 20;
     float x, y;
@@ -108,7 +110,9 @@ void Flock::updateFlock()
         //std::cout<<"Alignment: "<<alignment.x<<","<<alignment.y<<"\n--------------------\n";
         
         //bird.setVelocityVec(bird.getVelocity() + (w_c * cohesion + w_s * separation + w_a * alignment));
-        bird.setVelocityVec(bird.getVelocity() + glm::normalize((w_c * cohesion + w_s *separation + w_a * alignment + glm::vec2(0.001f, 0.001f))));
+        glm::vec2 oldVel = bird.getVelocity() ;
+        glm::vec2 newVel = bird.getVelocity() + glm::normalize((w_c * cohesion + w_s *separation + w_a * alignment + glm::vec2(0.001f, 0.001f)));
+        bird.setVelocityVec(0.4f*oldVel + 0.6f*newVel);
     
    //bird.limitVelocity();
     }
@@ -130,8 +134,9 @@ float Flock::getSeparation(Bird b1, Bird b2)
     return glm::distance(b1.getPosition(), b2.getPosition());
 }
 
-glm::vec2 Flock::diffuse(Bird b1) // diffuse Bird b among the others in flock
-{
+glm::vec2 Flock::diffuse(Bird &b1) // diffuse Bird b among the others in flock
+{   
+    int num_close = 0;
     float epsilon =b1.prot_radius;//40;// 50.0f; // diffusion distance
     glm::vec2 perturbation(0.0f, 0.0f);
     for(auto &b2: birds)
@@ -141,9 +146,17 @@ glm::vec2 Flock::diffuse(Bird b1) // diffuse Bird b among the others in flock
         
         float dist = b1.euclDist(b2);
         if (dist < epsilon)
-            perturbation -= (b2.getPosition() - b1.getPosition());
-            
+            {  
+                if (b2.is_sick && dist<=4) 
+                    {
+                    num_close++;    
+                    }
+                perturbation -= (b2.getPosition() - b1.getPosition());
+            }
     }
+
+    if(num_close >= 1)
+        b1.is_sick = true;
 
     return perturbation/100.0f;
 }
@@ -245,7 +258,9 @@ int Flock::render()
         
         glfwSwapBuffers(window);
         glfwPollEvents();
-// saveImage(("images/image"+std::to_string(frameNo++)+".png").c_str(), window);
+ 	
+ 	if (writeImg)
+ 		saveImage(("images/image"+std::to_string(frameNo++)+".png").c_str(), window);
 }     
 	glfwTerminate();
  return 0;

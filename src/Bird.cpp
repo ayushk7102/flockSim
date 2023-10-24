@@ -81,6 +81,10 @@ bool inBounds(float x, float y)
 
 }
 
+void Bird::setSick()
+{
+    is_sick = true;
+}
 float Bird::euclDist(Bird b)
 {
     return glm::distance(position, b.getPosition());
@@ -139,6 +143,15 @@ void Bird::drawBird()
     if (this->is_leader)
     {
        return;
+    }
+
+    if (this->is_sick)
+    {
+        glColor3f(0.0f, 1.0f, 0.0f); 
+    }
+    else
+    {
+        glColor3f(1.0f, 0.0f, 0.0f); 
     }
     float x = position.x;
     float y = position.y; 

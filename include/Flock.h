@@ -16,7 +16,8 @@ class Flock
     glm::vec2 maxVelocity;
 
     public:
-
+	
+    bool writeImg = false;
     Flock();
     Flock(std::vector<Bird> birds);
     
@@ -32,7 +33,7 @@ class Flock
     
     glm::vec2 getFlockCenterOfMass(int id);
     float getSeparation(Bird b1, Bird b2);
-    glm::vec2 diffuse(Bird b);
+    glm::vec2 diffuse(Bird &b);
     glm::vec2 getFlockHeading(int id);
 
     void drawFlock();
