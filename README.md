@@ -1,8 +1,8 @@
 # FlockSim: Modelling Bird Flocking Behaviour
 
 FlockSim is an interactive flocking simulator that implements the Boids model, a classic algorithm to model the collective behavior of a group of autonomous agents, such as a flock of birds or a school of fish.
+![cut](https://github.com/ayushk7102/flockSim/assets/65803868/8044459c-9443-4256-ad9a-6ddd89239fe2)
 
-![cut](https://github.com/ayushk7102/flockSim/assets/65803868/48580f3a-dd2d-408c-ad67-1a828f75e02a)
 
 ## The Model
 Each agent (a boid) in the model is represented by a position, velocity, and state. The state of a boid defines its visual radius, protective radius, and leadership (whether or not it is a flock leader). Velocity remains constant for flock leaders. 
